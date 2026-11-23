@@ -1,0 +1,44 @@
+1. Original age and income:
+ age  income
+  25   30000
+  35   45000
+  40   45000
+  35   80000
+  35   52000
+
+2. StandardScaler result:
+    age  income
+-1.8371 -1.2400
+ 0.2041 -0.3282
+ 1.2247 -0.3282
+ 0.2041  1.7993
+ 0.2041  0.0973
+Means (approximately 0): [0. 0.]
+Standard deviations (population, approximately 1): [1. 1.]
+
+3. MinMaxScaler result:
+   age  income
+0.0000    0.00
+0.6667    0.30
+1.0000    0.30
+0.6667    1.00
+0.6667    0.44
+Minimum values: [0. 0.]
+Maximum values: [1. 1.]
+
+4. KNeighborsClassifier accuracy on breast cancer dataset:
+KNN without scaling: 0.91
+KNN with scaling:    0.96
+
+5. Decision Tree accuracy:
+Decision tree without scaling: 0.91
+Decision tree with scaling:    0.91
+Decision trees are generally unaffected by feature scaling because their splits depend on feature order/thresholds, not distance.
+
+6. Bonus - RobustScaler with an outlier:
+ value  robust_scaled
+    10           -1.5
+    12           -0.5
+    13            0.0
+    14            0.5
+   100           43.5
